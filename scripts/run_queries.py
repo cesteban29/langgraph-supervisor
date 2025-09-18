@@ -47,8 +47,7 @@ def post_question(
     timeout_s: float = 30.0,
 ) -> Tuple[str, int, Optional[dict]]:
     headers = {
-        "Modal-Key": modal_key,
-        "Modal-Secret": modal_secret,
+        "Authorization": f"Bearer {modal_key}:{modal_secret}",
         "Content-Type": "application/json",
     }
     payload = {"q": question}
